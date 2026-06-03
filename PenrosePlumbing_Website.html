@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penrose Plumbing & Heating — Cody, Wyoming</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --dark:#0A1520;
+  --dark2:#132030;
+  --blue:#1A5276;
+  --orange:#E87820;
+  --orange2:#F59030;
+  --cream:#F8F5F0;
+  --warm:#F0EAE0;
+  --white:#FFFFFF;
+  --text:#1A1A1A;
+  --muted:#666;
+  --display:'Barlow Condensed',sans-serif;
+  --body:'Barlow',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--text);font-family:var(--body);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--dark);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--orange)}
+.nav-logo{font-family:var(--display);font-size:17px;color:#fff;text-decoration:none;font-weight:800;line-height:1.1}
+.nav-logo small{display:block;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.4);font-weight:400;text-transform:uppercase}
+.nav-call{background:var(--orange);color:#fff;padding:8px 14px;font-family:var(--display);font-size:14px;font-weight:800;text-decoration:none;white-space:nowrap}
+
+/* HERO */
+.hero{background:var(--dark);padding:88px 20px 36px;text-align:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=80') center/cover no-repeat;opacity:.08}
+.hero-content{position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,120,32,.2);border:1px solid rgba(232,120,32,.4);color:var(--orange2);padding:6px 16px;font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+.hero-title{font-family:var(--display);font-size:52px;line-height:.9;color:#fff;margin-bottom:12px;font-weight:900;letter-spacing:1px}
+.hero-title span{color:var(--orange);display:block}
+.hero-name{font-family:var(--display);font-size:15px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}
+.hero-cta{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.btn-main{background:var(--orange);color:#fff;padding:15px;font-family:var(--display);font-size:20px;font-weight:800;border:none;cursor:pointer;text-decoration:none;display:block;text-align:center;letter-spacing:1px}
+.btn-sec{border:2px solid rgba(255,255,255,.2);color:#fff;padding:13px;font-family:var(--display);font-size:17px;font-weight:700;text-decoration:none;display:block;text-align:center}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.08)}
+.h-stat{padding:14px 8px;text-align:center;border-right:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.h-stat:nth-child(even){border-right:none}
+.h-stat-num{font-family:var(--display);font-size:34px;color:var(--orange);display:block;font-weight:900;line-height:1}
+.h-stat-label{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:3px;display:block;font-weight:600}
+
+/* STRIP */
+.strip{background:var(--orange);padding:14px 20px;text-align:center}
+.strip-text{font-family:var(--display);font-size:18px;color:#fff;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.strip-sub{font-size:12px;color:rgba(255,255,255,.75);letter-spacing:1px;display:block;margin-top:3px}
+
+/* TRUST */
+.trust{background:var(--dark2);padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.trust-card{background:rgba(255,255,255,.06);border-left:3px solid var(--orange);padding:14px 12px;display:flex;align-items:flex-start;gap:10px}
+.trust-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.trust-title{color:#fff;font-family:var(--display);font-size:14px;font-weight:700;display:block;line-height:1.2}
+.trust-sub{color:rgba(255,255,255,.4);font-size:11px;margin-top:3px;display:block;line-height:1.4}
+
+/* SERVICES */
+.services{padding:48px 20px;background:var(--white)}
+.sec-tag{font-family:var(--display);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:8px;font-weight:700;display:flex;align-items:center;gap:8px}
+.sec-tag::before{content:'';width:20px;height:2px;background:var(--orange);flex-shrink:0}
+.sec-title{font-family:var(--display);font-size:40px;color:var(--dark);font-weight:900;line-height:.95;margin-bottom:28px}
+.sec-title span{color:var(--orange)}
+.svc-grid{display:grid;grid-template-columns:1fr;gap:3px}
+.svc-card{background:var(--cream);padding:24px 20px;border-left:4px solid transparent;transition:all .3s}
+.svc-card:hover{border-left-color:var(--orange);background:var(--warm)}
+.svc-icon{font-size:32px;margin-bottom:10px;display:block}
+.svc-name{font-family:var(--display);font-size:20px;color:var(--dark);margin-bottom:6px;font-weight:800}
+.svc-desc{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* ABOUT */
+.about{background:var(--dark);padding:48px 20px}
+.about img{width:100%;height:220px;object-fit:cover;display:block;margin-bottom:28px}
+.about .sec-tag{color:rgba(255,255,255,.5)}
+.about .sec-tag::before{background:var(--orange)}
+.about-title{font-family:var(--display);font-size:36px;color:#fff;font-weight:900;line-height:.95;margin-bottom:8px}
+.about-rule{width:32px;height:3px;background:var(--orange);margin:14px 0 20px}
+.about p{color:rgba(255,255,255,.5);line-height:1.9;font-size:14px;margin-bottom:14px}
+.about-quote{border-left:3px solid var(--orange);padding-left:16px;margin:20px 0;font-style:italic;color:rgba(255,255,255,.7);font-size:14px;line-height:1.8}
+.about-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.about-list li{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.6);font-size:14px}
+.about-list li::before{content:'✓';background:var(--orange);color:#fff;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;flex-shrink:0;margin-top:1px}
+
+/* REVIEWS */
+.reviews{padding:48px 20px;background:var(--cream)}
+.rev-rating{background:var(--dark);padding:20px;text-align:center;margin-bottom:16px}
+.rev-num{font-family:var(--display);font-size:56px;color:var(--orange);display:block;line-height:1;font-weight:900}
+.rev-stars{color:#FFD700;font-size:20px;letter-spacing:2px;margin:4px 0}
+.rev-label{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:2px;text-transform:uppercase}
+.rev-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.rev-card{background:var(--white);padding:22px;border-top:4px solid var(--orange)}
+.rev-stars-sm{color:#FFD700;font-size:14px;margin-bottom:10px;letter-spacing:2px}
+.rev-text{font-size:14px;color:var(--text);line-height:1.8;font-style:italic;margin-bottom:12px}
+.rev-author{font-family:var(--display);font-size:14px;color:var(--dark);font-weight:700}
+.rev-src{font-size:11px;color:var(--muted);margin-top:3px}
+
+/* CONTACT */
+.contact{padding:48px 20px;background:var(--dark2)}
+.contact .sec-tag{color:rgba(255,255,255,.5)}
+.contact .sec-tag::before{background:var(--orange)}
+.contact-title{font-family:var(--display);font-size:36px;color:#fff;font-weight:900;line-height:.95;margin-bottom:8px}
+.contact-rule{width:32px;height:3px;background:var(--orange);margin:14px 0 18px}
+.contact-text{color:rgba(255,255,255,.45);font-size:14px;line-height:1.8;margin-bottom:24px}
+.c-item{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.c-icon{width:40px;height:40px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.c-info strong{color:#fff;display:block;font-family:var(--display);font-size:14px;font-weight:700;margin-bottom:2px}
+.c-info a,.c-info span{color:rgba(255,255,255,.45);font-size:13px;text-decoration:none}
+.c-info a:hover{color:var(--orange)}
+.quote-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:24px 20px;margin-top:28px}
+.qf-title{font-family:var(--display);font-size:22px;color:#fff;font-weight:800;margin-bottom:4px}
+.qf-sub{color:rgba(255,255,255,.35);font-size:12px;margin-bottom:20px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-family:var(--display);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:6px;font-weight:700}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;padding:11px 13px;font-family:var(--body);font-size:14px;outline:none;transition:border .3s;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(232,120,32,.6)}
+.fg select option{background:var(--dark2)}
+.fg textarea{height:80px;resize:none}
+.qf-submit{width:100%;background:var(--orange);color:#fff;padding:15px;font-family:var(--display);font-size:18px;font-weight:800;border:none;cursor:pointer;letter-spacing:1px;margin-top:4px}
+
+/* FOOTER */
+footer{background:var(--dark);padding:28px 20px;border-top:3px solid var(--orange);text-align:center}
+.footer-logo{font-family:var(--display);font-size:20px;color:#fff;font-weight:900}
+.footer-logo span{color:var(--orange)}
+.footer-sub{font-size:10px;color:rgba(255,255,255,.3);margin:5px 0 12px;letter-spacing:2px;text-transform:uppercase}
+.footer-info{color:rgba(255,255,255,.35);font-size:13px;line-height:1.9}
+.footer-info a{color:var(--orange);text-decoration:none;font-family:var(--display);font-size:18px;font-weight:800;display:block}
+
+/* DESKTOP */
+@media(min-width:768px){
+  nav{padding:14px 60px}
+  .nav-logo{font-size:22px}
+  .nav-call{font-size:17px;padding:10px 24px}
+
+  .hero{padding:100px 60px 56px;text-align:left}
+  .hero-title{font-size:88px}
+  .hero-sub{font-size:15px;max-width:520px;margin-left:0}
+  .hero-cta{flex-direction:row;max-width:none}
+  .btn-main,.btn-sec{width:auto;display:inline-block;padding-left:32px;padding-right:32px}
+  .hero-stats{grid-template-columns:repeat(4,1fr)}
+  .h-stat{border-bottom:none}
+  .h-stat:nth-child(even){border-right:1px solid rgba(255,255,255,.08)}
+  .h-stat-num{font-size:42px}
+
+  .strip{display:flex;justify-content:center;align-items:center;gap:20px;padding:16px 60px}
+  .strip-sub{display:inline;margin-top:0}
+
+  .trust{grid-template-columns:repeat(4,1fr);padding:20px 60px}
+
+  .services{padding:100px 60px}
+  .sec-title{font-size:56px;margin-bottom:44px}
+  .svc-grid{grid-template-columns:repeat(3,1fr)}
+
+  .about{padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .about img{height:480px;margin-bottom:0}
+  .about-title{font-size:48px}
+
+  .reviews{padding:100px 60px}
+  .rev-rating{display:flex;align-items:center;gap:32px;text-align:left;padding:28px 36px;margin-bottom:36px}
+  .rev-num{font-size:72px}
+  .rev-grid{grid-template-columns:repeat(3,1fr);gap:16px}
+
+  .contact{padding:100px 60px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+  .contact-title{font-size:48px}
+  .quote-form{margin-top:0;padding:36px}
+
+  footer{padding:36px 60px;display:flex;justify-content:space-between;align-items:center;text-align:left}
+  .footer-sub{margin:4px 0 0}
+  .footer-info a{display:inline}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">PENROSE PLUMBING & HEATING<small>Cody, Wyoming · Est. 1981</small></a>
+  <a href="tel:3075277422" class="nav-call">📞 (307) 527-7422</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🔧 Serving Cody Since 1981 — 44 Years</div>
+    <h1 class="hero-title">CODY'S<br>RELIABLE <span>PLUMBER</span></h1>
+    <p class="hero-name">Sam & Julie — Penrose Plumbing & Heating</p>
+    <p class="hero-sub">New construction, service work, repairs and heating — serving Cody and the surrounding area since 1981. The team that goes the extra mile for every customer.</p>
+    <div class="hero-cta">
+      <a href="tel:3075277422" class="btn-main">📞 Call Now</a>
+      <a href="#contact" class="btn-sec">Free Quote →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat"><span class="h-stat-num">44</span><span class="h-stat-label">Years Serving Cody</span></div>
+      <div class="h-stat"><span class="h-stat-num">5.0★</span><span class="h-stat-label">Star Rating</span></div>
+      <div class="h-stat"><span class="h-stat-num">✅</span><span class="h-stat-label">Licensed</span></div>
+      <div class="h-stat"><span class="h-stat-num">3</span><span class="h-stat-label">Person Team</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <span class="strip-text">⭐ Established 1981 — 44 Years of Trusted Service in Cody</span>
+  <span class="strip-sub">New Construction · Repairs · Heating · Service Work</span>
+</div>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-card">
+    <div class="trust-icon">📅</div>
+    <div><span class="trust-title">Since 1981</span><span class="trust-sub">44 years in Cody, WY</span></div>
+  </div>
+  <div class="trust-card">
+    <div class="trust-icon">⭐</div>
+    <div><span class="trust-title">5.0 Stars</span><span class="trust-sub">Perfect rating every time</span></div>
+  </div>
+  <div class="trust-card">
+    <div class="trust-icon">✅</div>
+    <div><span class="trust-title">Licensed & Insured</span><span class="trust-sub">Wyoming certified</span></div>
+  </div>
+  <div class="trust-card">
+    <div class="trust-icon">❤️</div>
+    <div><span class="trust-title">Goes Extra Mile</span><span class="trust-sub">Free DIY advice — always!</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <p class="sec-tag">What We Do</p>
+  <h2 class="sec-title">OUR <span>SERVICES</span></h2>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <span class="svc-icon">🏗️</span>
+      <div class="svc-name">NEW CONSTRUCTION</div>
+      <p class="svc-desc">Full plumbing installation for new builds throughout Cody and the surrounding area. Done right from day one — our speciality since 1981.</p>
+    </div>
+    <div class="svc-card">
+      <span class="svc-icon">🔧</span>
+      <div class="svc-name">REPAIRS & SERVICE</div>
+      <p class="svc-desc">Leaks, burst pipes, broken fixtures, blocked drains — we fix it fast and right the first time. Always there when you need us.</p>
+    </div>
+    <div class="svc-card">
+      <span class="svc-icon">🔥</span>
+      <div class="svc-name">HEATING SYSTEMS</div>
+      <p class="svc-desc">Installation and repair of heating systems — keep your home warm through Wyoming winters. Service, repair and new installs.</p>
+    </div>
+    <div class="svc-card">
+      <span class="svc-icon">🏠</span>
+      <div class="svc-name">REMODELS</div>
+      <p class="svc-desc">Bathroom and kitchen remodels, fixture upgrades, pipe replacements — we work with your contractor or handle the whole job.</p>
+    </div>
+    <div class="svc-card">
+      <span class="svc-icon">🚿</span>
+      <div class="svc-name">DRAIN CLEANING</div>
+      <p class="svc-desc">Blocked drains cleared professionally — kitchen, bathroom and sewer lines. Fast response, lasting results.</p>
+    </div>
+    <div class="svc-card">
+      <span class="svc-icon">💧</span>
+      <div class="svc-name">WATER HEATERS</div>
+      <p class="svc-desc">Water heater repair and replacement — tank and tankless. No hot water? We'll have it sorted quickly and at a fair price.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="Penrose Plumbing team">
+  <div>
+    <p class="sec-tag">About Us</p>
+    <h2 class="about-title">44 YEARS OF GOING THE EXTRA MILE</h2>
+    <div class="about-rule"></div>
+    <p>Penrose Plumbing & Heating has been a trusted name in Cody since 1981. Founded by the Penrose family and now run by Sam and Julie, we've built our reputation on one simple principle — treat every customer like a neighbour, because in Cody, they are.</p>
+    <p>We specialise in new construction, service work, remodels and heating. But what really sets us apart? We care. When you call Penrose, you get real people who take the time to help — even if that means walking you through a DIY fix for free.</p>
+    <div class="about-quote">"I called about a DIY plumbing problem and Sam took 30 minutes out of his day to talk me through it. Would have never gotten it done without them!"<br><strong style="font-style:normal;font-family:var(--display);font-size:11px;letter-spacing:2px;color:var(--orange);display:block;margin-top:8px">— 5-STAR REVIEW</strong></div>
+    <ul class="about-list">
+      <li>Serving Cody & surrounding area since 1981</li>
+      <li>New construction, repairs & heating specialists</li>
+      <li>Licensed & fully insured — Wyoming certified</li>
+      <li>Always there when you need them — really</li>
+      <li>5.0 star rating — perfect score every time</li>
+      <li>Family values — they genuinely care</li>
+    </ul>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <p class="sec-tag">What Customers Say</p>
+  <div class="rev-rating">
+    <span class="rev-num">5.0</span>
+    <div>
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-label">Perfect 5.0 Rating · Every Review</div>
+    </div>
+  </div>
+  <div class="rev-grid">
+    <div class="rev-card">
+      <div class="rev-stars-sm">★★★★★</div>
+      <p class="rev-text">"I called about a DIY plumbing problem and Sam took 30 minutes out of his day to talk me through it. Would have never gotten it done without them. Next time I'll just have them do it!"</p>
+      <div class="rev-author">Verified Customer</div>
+      <div class="rev-src">Chamber of Commerce · Cody, WY</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars-sm">★★★★★</div>
+      <p class="rev-text">"Penrose did the initial installations on our new house and did an incredible job. They really care about their customers. We have had small fixes and I never have to call twice — somebody is always on the way!"</p>
+      <div class="rev-author">New Construction Customer</div>
+      <div class="rev-src">Yelp Review · Cody, WY</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars-sm">★★★★★</div>
+      <p class="rev-text">"A lot of contractors are quick to forget and move on, but Penrose has always come through. Truly a company that goes above and beyond for their customers every single time."</p>
+      <div class="rev-author">Long-Term Customer</div>
+      <div class="rev-src">Verified Review · Cody, WY</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <p class="sec-tag">Get In Touch</p>
+    <h2 class="contact-title">CALL OR GET A FREE QUOTE</h2>
+    <div class="contact-rule"></div>
+    <p class="contact-text">Call Sam or Julie directly — they answer personally and always take the time to help. For non-urgent work, fill out the form and they'll get back to you quickly.</p>
+    <div class="c-item">
+      <div class="c-icon">📞</div>
+      <div class="c-info"><strong>Phone</strong><a href="tel:3075277422">(307) 527-7422</a></div>
+    </div>
+    <div class="c-item">
+      <div class="c-icon">📧</div>
+      <div class="c-info"><strong>Email</strong><a href="mailto:sjyipp@gmail.com">sjyipp@gmail.com</a></div>
+    </div>
+    <div class="c-item">
+      <div class="c-icon">📍</div>
+      <div class="c-info"><strong>Address</strong><span>Cody, WY 82414</span></div>
+    </div>
+    <div class="c-item">
+      <div class="c-icon">🕐</div>
+      <div class="c-info"><strong>Hours</strong><span>Mon–Fri 9:00 AM – 5:00 PM</span></div>
+    </div>
+  </div>
+  <div class="quote-form">
+    <div class="qf-title">FREE QUOTE REQUEST</div>
+    <div class="qf-sub">Sam or Julie will get back to you personally!</div>
+    <form onsubmit="handleForm(event)">
+      <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith"></div>
+      <div class="fg"><label>Phone Number</label><input type="tel" placeholder="(307) 000-0000"></div>
+      <div class="fg">
+        <label>Service Needed</label>
+        <select>
+          <option>Plumbing Repair</option>
+          <option>New Construction</option>
+          <option>Remodel</option>
+          <option>Heating System</option>
+          <option>Drain Cleaning</option>
+          <option>Water Heater</option>
+          <option>Emergency Service</option>
+        </select>
+      </div>
+      <div class="fg"><label>Describe the Problem</label><textarea placeholder="Tell us what you need..."></textarea></div>
+      <button type="submit" class="qf-submit">SEND REQUEST TO PENROSE →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">PENROSE <span>PLUMBING & HEATING</span></div>
+    <div class="footer-sub">Licensed · Insured · Cody, Wyoming · Est. 1981</div>
+  </div>
+  <div class="footer-info">
+    <a href="tel:3075277422">(307) 527-7422</a>
+    sjyipp@gmail.com · Cody, WY 82414
+  </div>
+</footer>
+
+<script>
+function handleForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  btn.textContent="✓ Sent! Sam Will Be In Touch!";
+  btn.style.background='#1A5276';
+  setTimeout(()=>{btn.textContent='SEND REQUEST TO PENROSE →';btn.style.background='';},4000);
+}
+</script>
+</body>
+</html>
